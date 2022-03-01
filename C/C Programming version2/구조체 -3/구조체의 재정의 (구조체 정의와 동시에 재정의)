@@ -1,0 +1,15 @@
+# 구조체의 재정의 (구조체 정의와 동시에 재정의)
+
+- typedef를 이용한 구조체 자료형을 재정의하는 다른 방법
+
+- 자료형 재정의
+
+//구조체 정의와 동시에 재정의를 진행한다.
+typedef struct {
+    char name[20];
+    char address[30];
+    int age;
+} peoples;
+
+- 구조체 객체 선언
+people pe1 = {"Moon", "Seoul", 25};

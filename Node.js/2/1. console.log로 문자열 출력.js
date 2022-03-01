@@ -1,0 +1,1 @@
+console.log('문자열입니다. %s', 'haruster입니다.');
