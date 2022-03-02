@@ -1,0 +1,31 @@
+# 자료형
+
+## 문자형 선언 방법 3가지
+
+"" : 큰 따옴표
+'' : 작은 따옴표
+`` : 벡틱 (문자열에서 변수를 사용할 때 사용)
+
+### 벡틱의 사용 방법 
+
+console.log(`My name is ${name}`)
+console.log(`My age is ${20})
+
+
+## 숫자형
+
+- 정수형
+- 실수형
+
+
+## Boolean형
+
+- True
+- False
+
+## typeof 연산자 (자료형을 알아낼 수 있다.)
+
+ex)
+
+console.log(typeof 3) // number형이다.
+console.log(typeof "string") // string형이다.
