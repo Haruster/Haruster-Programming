@@ -1,6 +1,6 @@
 // 함수 선언
-
-const SayHello = (name:String, age:Number, addr:String) => { // name, age, addr이 매개변수인 함수 SayHello 선언(타입을 명시한 상태이다.)
+//(void는 빈공간을 의미한다. 또한 void는 함수의 인자들이 어떤 타입의 값을 돌려주는지를 나타내기 위해서 사용한다.) 최종적으로 void형을 반환함
+const SayHello = (name:string, age:number, addr:string):void => { // name, age, addr이 매개변수인 함수 SayHello 선언(타입을 명시한 상태이다.)
 
     console.log(`name = ${name}, age = ${age}, addr = ${addr}`);
 
