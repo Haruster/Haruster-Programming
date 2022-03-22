@@ -4,7 +4,7 @@ int Factorial_NCK(int N, int K) {
 
     if(K == 1 || K == 0) {
 
-        return 1;
+        return 1; 
 
     } else if ((0 < K) && (K < N)) {
 
