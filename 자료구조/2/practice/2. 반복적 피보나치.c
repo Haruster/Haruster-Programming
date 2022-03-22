@@ -1,4 +1,4 @@
-// 순환적 피보나치
+// 반복적 피보나치
 
 #include <stdio.h>
 #include <time.h>
