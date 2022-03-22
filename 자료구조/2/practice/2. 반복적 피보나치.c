@@ -3,30 +3,37 @@
 #include <stdio.h>
 #include <time.h>
 
+int fib (int n) {
+
+    if (n < 2) return n;
+
+    else {
+
+        int i, tmp, cur = 1, last = 0;
+
+        for (i = 2; i <= n; i++) {
+
+            tmp = cur;
+            cur += last;
+            last = tmp;
+
+        }
+
+        return cur;
+
+    }
+
+}
+
 int main(void) {
 
-    int n;
+    int n = 10;
 
     time_t start, end;
 
     start = clock(); // 수행 시간 측정 시작
 
-    if (n == 0) return 0;
-    if (n == 1) return 1;
-
-    int pp = 0; // 전전수
-    int p = 1; // 전수
-    int result = 0;
-
-    for (int i = 2; i <= n; i++) {
-
-        result = p + pp;
-
-        pp = p;
-
-        p = result;
-
-    }
+    printf("%d", fib(n));
 
     end = clock();
 
