@@ -21,7 +21,7 @@ int main(void) {
         }
 
     }
-    end = clock();; // 시간 측정 끝
+    end = clock(); // 시간 측정 끝
 
     double result = (double)(end - start);
 
