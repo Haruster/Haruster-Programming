@@ -23,7 +23,7 @@ void Stack_Push(StackType* s, int item) {
 
 }
 
-bool is_empty(StackType* s) {
+_Bool is_empty(StackType* s) {
 
     return s->top == -1;
 
