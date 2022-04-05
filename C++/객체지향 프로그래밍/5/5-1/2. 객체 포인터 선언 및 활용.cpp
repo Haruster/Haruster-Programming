@@ -38,12 +38,12 @@ int main() {
 
     p = &donut;
 
-    cout << p->getArea() << endl; // donut의 getArea() 호출
-    cout << (*p).getArea() << endl; // donut의 getArea() 호출
+    cout << p->getArea() << endl; // donut의 getArea() 호출 (C++)
+    cout << (*p).getArea() << endl; // donut의 getArea() 호출 (C언어)
 
     p = &pizza;
 
-    cout << p->getArea() << endl; // pizza의 getArea() 호출
-    cout << (*p).getArea() << endl; // pizza의 getArea() 호출
+    cout << p->getArea() << endl; // pizza의 getArea() 호출 (C++)
+    cout << (*p).getArea() << endl; // pizza의 getArea() 호출 (C언어)
 
 }
