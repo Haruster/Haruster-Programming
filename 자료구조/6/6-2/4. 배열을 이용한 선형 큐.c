@@ -114,3 +114,24 @@ int dequeue(QueueType *q) {
     return item;
 
 }
+
+int main(void) {
+
+    int item = 0;
+
+    QueueType q;
+
+    init_queue(&q);
+
+    enqueue(&q, 10); queue_print(&q);
+    enqueue(&q, 20); queue_print(&q);
+    enqueue(&q, 30); queue_print(&q);
+
+    item = dequeue(&q); queue_print(&q);
+    item = dequeue(&q); queue_print(&q);
+    item = dequeue(&q); queue_print(&q);
+
+    return 0;
+
+
+}
