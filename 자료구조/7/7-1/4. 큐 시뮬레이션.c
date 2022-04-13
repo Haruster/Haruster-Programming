@@ -1,9 +1,18 @@
+// 큐 시뮬레이션
+
 #include <stdio.h>
 #include <stdlib.h>
 
 #define MAX_QUEUE_SIZE 5
 
-typedef int element;
+typedef struct { // 요소 타입
+
+    int id;
+    int arrival_time;
+    int service_time
+
+} element;
+
 typedef struct { // 큐 타입
 
     element data[MAX_QUEUE_SIZE];
@@ -103,41 +112,64 @@ element dequeue(QueueType *q) {
 
 int main(void) {
 
-    QueueType queue;
+    int minutes = 60;
+    int total_wait = 0;
+    int total_customers = 0;
+    int service_time = 0;
+    int service_customer;
+    int clock;
 
-    int element;
+    QueueType queue;
 
     init_queue(&queue);
 
-    printf("__데이터 추가 단계__\n");
+    srand(time(NULL));
 
-    while (!is_full(&queue)) {
+    for(clock = 0; clock < minutes; clock++) {
 
-        printf("정수를 입력하시오 : ");
+        printf("현재 시각 = %d\n", clock);
 
-        scanf("%d", &element);
+        if ((rand() % 10) < 3) {
 
-        enqueue(&queue, element);
+            element customer;
 
-        queue_print(&queue);
+            customer.id = total_customers++;
+            customer.arrival_time = clock;
+            customer.service_time = rand() % 3 + 1;
 
-    }
+            enqueue(&queue, customer);
 
-    printf("큐는 포화상태입니다.\n\n");
+            printf("고객 %d이 %d분에 들어옵니다. 업무 처리시간 = %d분\n", customer.id, customer.arrival_time, customer.service_time);
 
-    printf("__데이터 삭제 단계__\n");
-
-    while(!is_empty(&queue)) {
-
-        element = dequeue(&queue);
-
-        printf("꺼내진 정수 : %d \n", element);
-
-        queue_print(&queue);
+        }
 
     }
 
-    printf("큐는 공백 상태입니다.\n");
+    if(service_time > 0) {
+
+        printf("고객 %d 업무처리 중입니다.\n", service_customer);
+
+        service_time--;
+
+    }
+    else {
+
+        if(!is_empty(&queue)) {
+
+            element customer = dequeue(&queue);
+
+            service_customer = customer.id;
+            service_time = customer.service_time;
+
+            printf("고객 %d이 %d분에 업무를 시작합니다. 대기시간은 %d분이었습니다. \n", customer.id, clock, clock - customer.arrival_time);
+
+            total_wait += clock - customer.arrival_time;
+
+        }
+
+    }
+
+    printf("전체 대기 시간 = %d분 \n", total_wait);
 
     return 0;
 
