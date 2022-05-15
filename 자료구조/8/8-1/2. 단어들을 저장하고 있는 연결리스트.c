@@ -30,13 +30,27 @@ void error(char *message) {
 
 ListNode* insert_first(ListNode *head, element value) {
 
-    for (ListNode *p = head; p!= NULL; p = p->link) {
+    ListNode *p = (ListNode *)malloc(sizeof(ListNode));
+
+    p->data = value;
+    p->link = head; // 헤드 포인터의 값을 복사
+
+    head = p;   // 헤드 포인터 변경
+
+    return head;
+
+
+}
+
+void print_list(ListNode *head) {
+
+    for (ListNode *p = head; p != NULL; p = p->link) {
 
         printf("%s->", p->data.name);
 
     }
 
-    printf("NULL\n");
+    printf("NULL \n");
 
 }
 
@@ -64,7 +78,7 @@ int main(void) {
 
     head = insert_first(head, data);
 
-    print_first(head);
+    print_list(head);
 
     return 0;
 
