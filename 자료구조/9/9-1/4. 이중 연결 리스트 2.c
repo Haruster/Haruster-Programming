@@ -50,19 +50,17 @@ void dinsert(DListNode *before, element data) {
 
 }
 
-void print_list(DListNode *head) {
+void print_dlist(DListNode* phead) {
 
-    for (DListNode *p = head; p != NULL; p = p->llink) {
+    DListNode* p;
 
-        for (DListNode *p = head; p != NULL; p = p->rlink) {
+    for (p = phead->rlink; p != phead; p = p->rlink) {
 
-            printf("%d->", p->data);
-
-        }
+        printf("<-||%d|->", p->data);
 
     }
 
-    printf("NULL \n");
+    printf("\n");
 
 }
 
