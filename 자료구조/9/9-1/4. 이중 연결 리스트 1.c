@@ -53,6 +53,31 @@ void dinsert(DListNode *before, element data) {
 
 }
 
+void ddlete(DListNode* head, DListNode* removed) {
+
+        if (removed == head) return;
+
+        removed->llink->rlink = removed->rlink;
+        removed->rlink->llink = removed->llink;
+
+        free(removed);
+
+}
+
+void dinsert(DListNode *before, element data) {
+
+    DListNode *newnode = (DListNode *)malloc(sizeof(DListNode));
+
+    strcpy(newnode->data, data);
+
+    newnode->llink = before;
+    newnode->rlink = before->rlink;
+
+    before->rlink->llink = newnode;
+    before->rlink = newnode;
+
+}
+
 // 이중 연결 리스트 테스트 프로그램
 
 int main(void) {
