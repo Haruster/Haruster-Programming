@@ -107,9 +107,9 @@ int main(void) {
     push(&s, 2); print_stack(&s);
     push(&s, 3); print_stack(&s);
 
-    pop(&s, 1); print_stack(&s);
-    pop(&s, 2); print_stack(&s);
-    pop(&s, 3); print_stack(&s);
+    pop(&s); print_stack(&s);
+    pop(&s); print_stack(&s);
+    pop(&s); print_stack(&s);
 
     return 0;
 
