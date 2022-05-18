@@ -50,6 +50,22 @@ void dinsert(DListNode *before, element data) {
 
 }
 
+void print_list(DListNode *head) {
+
+    for (DListNode *p = head; p != NULL; p = p->llink) {
+
+        for (DListNode *p = head; p != NULL; p = p->rlink) {
+
+            printf("%d->", p->data);
+
+        }
+
+    }
+
+    printf("NULL \n");
+
+}
+
 // 이중 연결 리스트 테스트 프로그램
 
 int main(void) {
