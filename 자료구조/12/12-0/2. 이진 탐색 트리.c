@@ -60,7 +60,7 @@ TreeNode *min_value_node(TreeNode *node) {
 
     while(current->left != NULL) {
 
-        currnet = current->left;
+        current = current->left;
 
     }
 
