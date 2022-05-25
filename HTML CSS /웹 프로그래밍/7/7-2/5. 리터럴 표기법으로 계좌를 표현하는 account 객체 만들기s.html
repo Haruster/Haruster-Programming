@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>리터럴 표기법으로 사용자 객체 만들기</title>
+
+    <script>
+        // 사용자 객체 만들기
+
+        var account = {
+
+            // 프로퍼티 생성 및 초기화
+
+            owner: "하루스터", // 계좌 주인
+            code: "1111", // 계좌 코드
+            balance: 35000, // 잔액 프로퍼티
+
+
+            // 메소드 작성
+
+            inquiry: function() {
+                return this.balance;
+            }, // 잔금 조회
+            deposit: function(money) {
+                this.balance += money;
+            }, // 저금. money 만큼 저금
+
+            withdraw: function(money) { // 예금 인출. money는 인출하고자 하는 액수이다.
+
+                // money가 balance보다 작다고 가정한다.
+
+                this.balance -= money;
+
+                return money;
+
+            }
+
+        };
+    </script>
+
+</head>
+
+<body>
+
+    <h3>리터럴 표기법으로 사용자 객체 만들기</h3>
+
+    <hr>
+
+    <script>
+        document.write("account : ");
+        document.write(account.owner + ",");
+        document.write(account.code + ",");
+        document.write(account.balance + "<br>");
+
+        account.deposit(10000); // 10000원 저금
+
+        document.write("10000원 저금 후 잔액은 " + account.inquiry() + "<br>");
+
+        account.withdraw(5000); // 5000원 인출
+
+        document.write("5000원 인출 후 잔액은 " + account.inquiry() + "<br>");
+    </script>
+
+</body>
+
+</html>
