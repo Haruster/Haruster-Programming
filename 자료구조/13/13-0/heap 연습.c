@@ -47,6 +47,9 @@ element delete_max_heap(HeapType* h)
 {
     
     int parent, child;
+
+    element item, temp;
+
     
     item = h->heap[1];
     
@@ -67,7 +70,7 @@ element delete_max_heap(HeapType* h)
             
         }
         
-        if (temp.key >= h->heap[child.key]) break;
+        if (temp.key >= h->heap[child].key) break;
         
         // 한 단계 아래로 이동
         
