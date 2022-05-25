@@ -4,7 +4,7 @@
 #include <memory.h>
 
 #define MAX_WORD_SIZE   20
-#define MAX_MEANING_SIZE 15
+#define MAX_MEANING_SIZE 30
 
 // 데이터 형식
 
