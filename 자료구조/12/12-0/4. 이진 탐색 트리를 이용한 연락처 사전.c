@@ -46,7 +46,7 @@ void display(TreeNode * p) {
 
         display(p->left);
 
-        printf("%s : %s", p->key.meaning);
+        printf("%s : %s", p->key.word, p->key.meaning);
 
         display(p->right);
 
@@ -104,7 +104,7 @@ TreeNode * insert_node(TreeNode * node, element key) {
 
     // 트리가 공백이면 새로운 노드를 반환한다.
 
-    if (node = NULL) return new_node(key);
+    if (node == NULL) return new_node(key);
 
     // 그렇지 않으면 순환적으로 트리를 내려간다.
 
