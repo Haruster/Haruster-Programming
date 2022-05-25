@@ -214,7 +214,7 @@ TreeNode * delete_node(TreeNode * root, element key) {
 
 void help() {
 
-    printf("\n******** i : 입력, d : 삭제, s : 탐색, p : 출력, q : 종료 **********");
+    printf("\n******** i : 입력, d : 삭제, s : 탐색, p : 출력, q : 종료 **********: ");
 
 }
 
@@ -249,6 +249,10 @@ int main(void) {
                 printf("연락처 : ");
 
                 gets_s(e.meaning, MAX_MEANING_SIZE);
+
+                root = insert_node(root, e);
+
+                break;
 
             case 'd':
 
