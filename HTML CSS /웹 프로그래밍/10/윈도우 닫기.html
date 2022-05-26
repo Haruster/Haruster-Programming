@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>윈도우 닫기</title>
+
+    <script>
+        var netWin = null; // 새로 연 윈도우를 기억한다.
+
+        function load(URL) {
+
+            netWin = Window.open(URL, "myWin", "left=300, top = 300, width = 400, height = 400");
+
+        }
+
+        function closeNewWindow() {
+
+            if (netWin == null | netWin.closed) // 윈도우가 열리지 않았거나 닫힌 경우
+
+                return;
+
+            else {
+
+                netWin.close(); // 열어 놓은 윈도우 닫기
+
+            }
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h3>Window의 close()로 윈도우 닫기</h3>
+
+    <hr>
+
+    <a href="javascript:load('http://phantester.me')">새 윈도우 열기 내 사이트</a>
+    <a href="javascript:window.close()">현재 윈도우 닫기</a>
+
+</body>
+
+</html>
