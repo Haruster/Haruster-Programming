@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>this 활용</title>
+    <script>
+        function change(obj, size, color) {
+
+            obj.style.color = color;
+            obj.style.fontSize = size;
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <h3>this 활용</h3>
+
+    <hr>
+
+    <button onclick="change(this, '30px', 'red')">버튼</button>
+    <button onclick="change(this, '30px', 'blue')">버튼</button>
+
+    <div onclick="change(this, '25px', 'orange')">여기르 클릭하면 크기와 색 변경</div>
+
+</body>
+
+</html>

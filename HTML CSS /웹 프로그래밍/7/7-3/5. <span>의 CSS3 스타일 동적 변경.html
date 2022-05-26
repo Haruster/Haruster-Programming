@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS 스타일 동적 변경</title>
+    <script>
+        function change() {
+
+            var span = document.getElementById("my span");
+
+            span.style.color = "green"; // 글자색 green
+            span.style.fontSize = "30px"; // 글자 크기는 30픽셀이다.
+            span.style.display = "block"; // 블록 박스로 변경
+            span.style.width = "6em"; // 박스의 폭. 6글자 크기
+            span.style.border = "3px dotted magenta"; // 3픽셀 점선 magenta 테두리
+            span.style.margin = "20px"; // 상하좌우 여백 20px
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <h3>CSS 스타일 동적 변경</h3>
+    <hr>
+
+    <p style="color:aqua"> 이것은 <span id="mySpan" style="color:midnightblue">문장입니다.</span></p>
+    <input type="button" value="스타일 변경" onclick="change()">
+</body>
+
+</html>
