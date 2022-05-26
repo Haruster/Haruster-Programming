@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>마우스 드래깅으로 캔버스에 그림 그리기</title>
+</head>
+
+<body onload="init()">
+
+    <h3>마우스를 누른 채 드래깅을 하여 그림을 그려 보세요</h3>
+
+    <hr>
+
+    <canvas id="myCanvas" style="background-color: aqua;" width="500" height="500"></canvas>
+
+    <script>
+        var canvas, context;
+
+        function init() {
+
+            canvas = document.getElementById("myCanvas");
+
+            context = canvas.getContext("2d");
+
+            context.lineWidth = 2; // 선 굵기 2
+            context.strokeStyle = "yellow";
+
+            canvas.addEventListener("mousemove", function(e) {
+                move(e)
+            }, false);
+            canvas.addEventListener("mousedown", function(e) {
+                down(e)
+            }, false);
+            canvas.addEventListener("mouseup", function(e) {
+                up(e)
+            }, false);
+            canvas.addEventListener("mouseout", function(e) {
+                out(e)
+            }, false);
+
+        }
+
+        var startX = 0,
+            startY = 0; // 드래깅 동안, 처음 마우스가 눌러진 좌표
+
+        var dragging = false;
+
+        function draw(curX, curY) {
+
+            context.beginPath();
+
+            context.moveTo(startX, startY);
+
+            context.lineTo(curX, curY);
+
+            context.stroke();
+
+        }
+
+        function down(e) {
+
+            startX = e.offsetX;
+            startY = e.offsetY;
+            dragging = true;
+
+        }
+
+        function up(e) {
+            dragging = false;
+        }
+
+        function move(e) {
+
+            if (!dragging) return; // 마우스가 눌리지 않았으면 리턴한다.
+
+            var curX = e.offsetX,
+                curY = e.offsetY;
+
+            draw(curX, curY);
+
+            startX = curX;
+            startY = curY;
+
+        }
+
+        function out(e) {
+            dragging = false;
+        }
+    </script>
+
+</body>
+
+</html>
