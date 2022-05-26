@@ -17,13 +17,13 @@
         var canvas = document.getElementById("myCanvas");
         var context = canvas.getContext("2d");
 
-        context.strokeStyle = "blue";
+        context.strokeStyle = "yellow";
 
         // font 프로퍼티 활용
 
         for (var i = 0; i < 4; i++) {
 
-            context.font = (10 + i * 10) * "px forte";
+            context.font = (10 + i * 10) + "px forte";
             context.strokeText("javascript 재밌다.", 10, 30 + i * 50);
 
         }
@@ -41,7 +41,7 @@
 
         context.fillStyle = "green";
         context.textAligh = "right";
-        context.fillStyle("JavaScript 재밌다.", 490, 300);
+        context.fillStyle("JavaScript 재밌다.", 490, 360);
     </script>
 
 </body>

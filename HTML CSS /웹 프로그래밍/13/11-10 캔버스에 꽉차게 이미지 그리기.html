@@ -11,9 +11,22 @@
 
     <hr>
 
-    <canvas id="myCanvas" width="500" height="400"></canvas>
+    <canvas id="myCanvas" width="1920" height="1080"></canvas>
 
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
 
+        var img = new Image();
+
+        img.onload = function() {
+
+            context.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        }
+
+        img.src = "image.jpeg";
+    </script>
 
 </body>
 
