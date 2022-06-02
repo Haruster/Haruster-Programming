@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>onbeforeprint와 onafterprint</title>
+
+    <style>
+        #logoDiv {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <script>
+        window.onbeforeprint = function(e) {
+
+            logoDiv = document.getElementById("logoDiv");
+            logoDiv.style.display = "block"; // block으로 변경. 로고가 화면에 나타나게 한다.
+
+        }
+
+        window.onafterprint = hideLogo();
+
+        function hideLogo() {
+
+            logoDiv = document.getElementById("logoDiv");;
+            logoDiv.style.display = "none"; // <div> 영역이 보이지 않게 한다.
+            logoDiv.style.zIndex = -1; // 이미지를 문서의 맨 바닥으로 위치한다.
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h3>onbeforeprint, onafterprint 이벤트 예</h3>
+
+    <hr>
+
+    <div id="logoDiv">
+
+        <img src="logo.png" alt="이미지가 없습니다.">
+
+    </div>
+
+    <p>
+
+        안녕하세요. 브라우저 윈도우에서는 보이지 않지만, 프린트시에는 회사 로고가 출력되는 예제를 보입니다. 마우스 오른쪽 버튼을 눌러 인쇄 미리보기 메뉴를 선택해보세요.
+
+    </p>
+
+</body>
+
+</html>
